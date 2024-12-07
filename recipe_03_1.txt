@@ -1,0 +1,14 @@
+# Runtime: 8s
+
+Find_/_Replace({'option':'Regex','string':'(mul\\(\\d{1,3},\\d{1,3}\\))'},'$1',true,false,true,false/disabled)
+Split('mul','\\n')
+Tail('Line feed',-1)
+Find_/_Replace({'option':'Regex','string':'(.+)'},'mul$1',true,false,true,false)
+Filter('Line feed','mul\\(\\d{1,3},\\d{1,3}\\)',false)
+Fork('\\n','\\n',false)
+Register('(mul\\((\\d{1,3}),(\\d{1,3})\\))',true,true,false)
+Find_/_Replace({'option':'Regex','string':'.+'},'$R1 $R2',true,false,true,false)
+Multiply('Space')
+Merge(true)
+Sum('Line feed')
+

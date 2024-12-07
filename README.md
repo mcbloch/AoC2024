@@ -55,4 +55,6 @@ c1_3, c2_4
 
 ### Day 02
 
-A bit easier to find a solution compared to day 1. We start working per row by using `Fork`. Then we duplicate numbers to create pairs. We subtract them from eachother and wil use `Flow Control` operations to validate the output. We can place labels and use regexes in the `Conditional Jump` block to check if we have all positive or negative numbers and if they are 1, 2 or 3.
+A bit easier to find a solution for the first part of day 2 compared to day 1. We start working per row by using `Fork`. Then we duplicate numbers to create pairs. We subtract them from eachother and wil use `Flow Control` operations to validate the output. We can place labels and use regexes in the `Conditional Jump` block to check if we have all positive or negative numbers and if they are 1, 2 or 3.
+
+For the second part I could not think of a solution yet.
