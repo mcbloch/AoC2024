@@ -1,0 +1,19 @@
+# Takes 8 seconds, mostly threading operations
+
+Find_/_Replace({'option':'Simple string','string':'   '},',',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'(\\d+),(\\d+)\\n'},'c1_$1,c2_$2,',true,false,false,false)
+Find_/_Replace({'option':'Regex','string':'(.*),$'},'$1',true,false,true,false)
+Sort('Comma',false,'Alphabetical (case sensitive)')
+Find_/_Replace({'option':'Regex','string':'(c1_\\d+),(c2)'},'$1\\n$2',true,false,true,false)
+Fork('\\n','\\n',false)
+Split(',','\\n')
+Add_line_numbers()
+Merge(true)
+Sort('Line feed',false,'Alphabetical (case sensitive)')
+Find_/_Replace({'option':'Regex','string':'[ ]*\\d+ c1_(\\d+)\\n[ ]*\\d+ c2_(\\d+)\\n?'},'$1,$2\\n',true,false,true,false)
+Fork('\\n','\\n',false)
+Sort('Comma',true,'Alphabetical (case sensitive)')
+Subtract('Comma')
+Merge(true)
+Sum('Line feed')
+

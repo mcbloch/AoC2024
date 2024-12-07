@@ -1,0 +1,19 @@
+# Takes 20 seconds
+
+Find_/_Replace({'option':'Simple string','string':'   '},',',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'(\\d+),(\\d+)\\n'},'c1_$1,c2_$2,',true,false,false,false)
+Find_/_Replace({'option':'Regex','string':'(.*),$'},'$1',true,false,true,false)
+Sort('Comma',false,'Alphabetical (case sensitive)')
+Find_/_Replace({'option':'Regex','string':'(c1_\\d+),(c2)'},'$1\\n$2',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'c[12]_(\\d+,?)'},'$1',true,false,true,false)
+Register('([\\S]*)\\n([\\S]*)',true,false,false)
+Find_/_Replace({'option':'Regex','string':'(.*)\\n.*'},'$1',true,false,true,false)
+Fork(',','\\n',false)
+Register('(.*)',true,false,false)
+Find_/_Replace({'option':'Regex','string':'(\\d+)'},'$R1',true,false,true,false)
+Count_occurrences({'option':'Simple string','string':'$R2'})
+Find_/_Replace({'option':'Regex','string':'(\\d+)'},'$1,$R2',true,false,true,false)
+Multiply('Comma')
+Merge(true)
+Sum('Line feed')
+
