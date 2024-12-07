@@ -1,0 +1,22 @@
+# Very slow :D, took 70 seconds
+
+Find_/_Replace({'option':'Regex','string':'(\\d+)'},'$1,$1',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'\\d+,(.*),\\d+'},'$1',true,false,true,false)
+Fork('\\n','\\n',false)
+Split(',','\\n')
+Fork('\\n','\\n',false)
+Subtract('Space')
+Merge(false)
+Find_/_Replace({'option':'Regex','string':'\\n'},',',true,false,true,false)
+Conditional_Jump('(^([1-9]+,)+[1-9]+$)|(^(-[1-9]+,)+-[1-9]+$)',true,'unsafe',10)
+Conditional_Jump('[^-,123]',false,'unsafe',10)
+Label('safe')
+Find_/_Replace({'option':'Regex','string':'(\\S+)'},'1',true,false,true,false)
+Jump('continue',10)
+Label('unsafe')
+Find_/_Replace({'option':'Regex','string':'(\\S+)'},'0',true,false,true,false)
+Jump('continue',10)
+Label('continue')
+Merge(true)
+Sum('Line feed')
+
