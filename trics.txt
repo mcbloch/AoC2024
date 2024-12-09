@@ -1,0 +1,12 @@
+# Rotating text x degrees (multiples of 90 only)
+
+Find_/_Replace({'option':'Regex','string':'\\n'},'',true,false,true,false)
+Generate_Image('Greyscale',1,3)
+Rotate_Image(90)
+Extract_RGBA(',',false)
+Find_/_Replace({'option':'Regex','string':'0,0,0,?'},'',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'((\\d+,){2})(\\d+),?'},'$2',true,false,true,false)
+Find_/_Replace({'option':'Regex','string':'((\\d+,){3})'},'$1\\n',true,false,false,false)
+Fork('\\n','\\n',false)
+From_Decimal('Comma',false)
+Merge(true)
